@@ -5,6 +5,7 @@ dotenv.config();
 import userRouter from "./routes/user.routes.js";
 import userAuth from "./routes/auth.routes.js";
 import cookieParser from "cookie-parser";
+import lisitngRouter from './routes/listing.routes.js'
 
 mongoose
 .connect(process.env.MONGO)
@@ -27,6 +28,7 @@ app.listen(5000, () => {
 
 app.use("/api/user", userRouter);
 app.use("/api/auth", userAuth);
+app.use("/api/listing", lisitngRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
