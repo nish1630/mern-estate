@@ -20,6 +20,7 @@ import {
   signOutUserSuccess,
 } from "../redux/user/userSlice.js";
 import { useDispatch } from "react-redux";
+import {Link} from 'react-router-dom';
 
 // Firebase Storage
 /*
@@ -187,6 +188,9 @@ export default function Profile() {
         <button disabled={loading} className="uppercase bg-slate-800 p-3 rounded-lg font-semibold text-white hover:opacity-75 disabled:opacity-85">
           {loading? 'Loading...' : 'Update'}
         </button>
+        <Link className="bg-green-500 text-white p-3 rounded-lg uppercase hover:opacity-95 text-center" to={"/create-listing"}>
+        Create Listing
+        </Link>
       </form>
       <div className="flex justify-between mt-5">
         <span onClick={handleDeleteUser} className="text-red-700 cursor-pointer">Delete Account</span>
